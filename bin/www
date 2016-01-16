@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+require('coffee-script/register'); //for app.coffee
+
 var app = require('../app');
 var debug = require('debug')('mrc:server');
 var http = require('http');
