@@ -1,0 +1,3 @@
+$ ->
+  do Background.init
+  true
