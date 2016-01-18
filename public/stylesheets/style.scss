@@ -5,8 +5,8 @@ body {
   font-family: 'Raleway', sans-serif;
   color: $font-dark;
   font-size: 16px;
-  @media only screen and (max-device-width: 520px) {
-    font-size: 50px;
+  @media only screen and (max-device-width: 520px) and (orientation: portrait) {
+    font-size: 45px;
   }
 }
 
@@ -17,8 +17,9 @@ body {
   background-color: transparent;
   z-index: -1;
   
-  @media only screen and (max-device-width: 520px) {
-    /*background-image: none;*/
+  @media only screen and (max-device-width: 520px) and (orientation: portrait) {
+    background-image: none;
+    background-color: white;
   }
 }
 
@@ -47,7 +48,7 @@ body,
   -moz-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
   box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
 
-  @media only screen and (max-device-width: 520px) {
+  @media only screen and (max-device-width: 520px) and (orientation: portrait) {
     width: 100vw;
     height: 50vh;
   }
@@ -73,7 +74,6 @@ body,
     margin-top: 2em;
     padding: 1em;
     font-size: 1em;
-    width: inherit;
     background-color: #D1DDE4;
     border-radius: 10px;
   }
