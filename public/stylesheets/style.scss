@@ -4,13 +4,22 @@ body {
   background-color: black;
   font-family: 'Raleway', sans-serif;
   color: $font-dark;
+  font-size: 16px;
+  @media only screen and (max-device-width: 520px) {
+    font-size: 50px;
+  }
 }
 
 .background {
   position: absolute;
   background-image: url('/images/bg.jpg');
   background-size: cover;
+  background-color: transparent;
   z-index: -1;
+  
+  @media only screen and (max-device-width: 520px) {
+    /*background-image: none;*/
+  }
 }
 
 html,
@@ -30,21 +39,25 @@ body,
 
 .content {
   align-self: center;
-  max-width: 600px;
   background-color: white;
   text-align: center;
-  padding: 3em 2em 2em;
+  padding: 4em 3em 3em;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 50px -6px rgba(0,0,0,0.8);
-  -moz-box-shadow: 2px 2px 50px -6px rgba(0,0,0,0.8);
-  box-shadow: 2px 2px 50px -6px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
+  -moz-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
+  box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
+
+  @media only screen and (max-device-width: 520px) {
+    width: 100vw;
+    height: 50vh;
+  }
 
   span.name {
     font-size: 2.5em;
     padding: 1em 0;
 
     &#first {
-      color: #4A697B;
+      color: #006086;
     }
 
     &#last {

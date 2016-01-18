@@ -111,7 +111,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background-color: black;\n  font-family: 'Raleway', sans-serif;\n  color: #3A3A3A; }\n\n.background {\n  position: absolute;\n  background-image: url(\"/images/bg.jpg\");\n  background-size: cover;\n  z-index: -1; }\n\nhtml,\nbody,\n.main {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden; }\n\n.main {\n  display: flex;\n  justify-content: center; }\n\n.content {\n  align-self: center;\n  max-width: 600px;\n  background-color: white;\n  text-align: center;\n  padding: 3em 2em 2em;\n  border-radius: 10px;\n  -webkit-box-shadow: 2px 2px 50px -6px rgba(0, 0, 0, 0.8);\n  -moz-box-shadow: 2px 2px 50px -6px rgba(0, 0, 0, 0.8);\n  box-shadow: 2px 2px 50px -6px rgba(0, 0, 0, 0.8); }\n  .content span.name {\n    font-size: 2.5em;\n    padding: 1em 0; }\n    .content span.name#first {\n      color: #4A697B; }\n    .content span.name#last {\n      font-weight: bold; }\n  .content div.developmentNotice {\n    margin-top: 2em;\n    padding: 1em;\n    font-size: 1em;\n    width: inherit;\n    background-color: #D1DDE4;\n    border-radius: 10px; }\n\np {\n  padding: 0;\n  margin: 1em 0;\n  font-size: 1em; }\n\na {\n  color: #00B7FF; }\n", ""]);
+	exports.push([module.id, "body {\n  background-color: black;\n  font-family: 'Raleway', sans-serif;\n  color: #3A3A3A;\n  font-size: 16px; }\n  @media only screen and (max-device-width: 520px) {\n    body {\n      font-size: 50px; } }\n\n.background {\n  position: absolute;\n  background-image: url(\"/images/bg.jpg\");\n  background-size: cover;\n  background-color: transparent;\n  z-index: -1; }\n  @media only screen and (max-device-width: 520px) {\n    .background {\n      /*background-image: none;*/ } }\n\nhtml,\nbody,\n.main {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden; }\n\n.main {\n  display: flex;\n  justify-content: center; }\n\n.content {\n  align-self: center;\n  background-color: white;\n  text-align: center;\n  padding: 4em 3em 3em;\n  border-radius: 10px;\n  -webkit-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  -moz-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8); }\n  @media only screen and (max-device-width: 520px) {\n    .content {\n      width: 100vw;\n      height: 50vh; } }\n  .content span.name {\n    font-size: 2.5em;\n    padding: 1em 0; }\n    .content span.name#first {\n      color: #006086; }\n    .content span.name#last {\n      font-weight: bold; }\n  .content div.developmentNotice {\n    margin-top: 2em;\n    padding: 1em;\n    font-size: 1em;\n    width: inherit;\n    background-color: #D1DDE4;\n    border-radius: 10px; }\n\np {\n  padding: 0;\n  margin: 1em 0;\n  font-size: 1em; }\n\na {\n  color: #00B7FF; }\n", ""]);
 	
 	// exports
 
@@ -489,12 +489,12 @@
 	    this.$el = $('body').children('div.background');
 	    this.$el.css({
 	      opacity: '0',
-	      width: '120vw',
-	      height: '120vh',
-	      top: '-10vh',
-	      left: '-10vw'
+	      width: '100vw',
+	      height: '100vh',
+	      top: '0',
+	      left: '0'
 	    }).animate({
-	      opacity: '1'
+	      opacity: '0.75'
 	    }, 2000, 'easeOutQuint');
 	    return this;
 	  }

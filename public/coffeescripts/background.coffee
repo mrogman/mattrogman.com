@@ -5,12 +5,12 @@ Background =
     this.$el
       .css
         opacity: '0'
-        width: '120vw'
-        height: '120vh'
-        top: '-10vh'
-        left: '-10vw'
+        width: '100vw'
+        height: '100vh'
+        top: '0'
+        left: '0'
       .animate
-        opacity: '1'
+        opacity: '0.75'
         #width: '105vw'
         #height: '105vh'
         #top: '-2.5vh'
