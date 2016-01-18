@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  font-family: 'Raleway', sans-serif;
 }
 
 .background {
@@ -8,6 +8,64 @@ body {
   background-image: url('/images/bg.jpg');
   background-size: cover;
   z-index: -1;
+}
+
+body,
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  align-self: center;
+  max-width: 600px;
+  background-color: white;
+  text-align: center;
+  padding: 3em 2em 2em;
+  border-radius: 10px;
+
+  span.name {
+    font-size: 2.5em;
+    padding: 1em 0;
+
+    &#first {
+      color: dimgray;
+    }
+
+    &#last {
+      color: #1A1A1A;
+      font-weight: bold;
+    }
+
+  }
+
+  p.description {
+    color: dimgray;
+  }
+
+  div.developmentNotice {
+    margin-top: 2em;
+    padding: 1em;
+    color: #1A1A1A;
+    font-size: 1em;
+    width: inherit;
+    background-color: #DCD9D9;
+    border-radius: 10px;
+  }
+
+}
+
+p {
+  padding: 0;
+  margin: 1em 0;
+  font-size: 1em;
 }
 
 a {

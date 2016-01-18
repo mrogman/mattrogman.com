@@ -11,10 +11,10 @@ Background =
         left: '-10vw'
       .animate
         opacity: '1'
-        width: '105vw'
-        height: '105vh'
-        top: '-2.5vh'
-        left: '2.5vw'
+        #width: '105vw'
+        #height: '105vh'
+        #top: '-2.5vh'
+        #left: '-1.5vw'
       , 2000, 'easeOutQuint'
     this
 
