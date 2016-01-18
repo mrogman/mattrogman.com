@@ -4,6 +4,6 @@ router = express.Router()
 ### GET home page. ###
 
 router.get '/', (req, res, next) ->
-  res.render 'index', title: 'Matt Rogman (mrogman)'
+  res.render 'index', title: 'Matt Rogman'
 
 module.exports = router

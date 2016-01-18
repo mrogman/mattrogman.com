@@ -1,7 +1,7 @@
 Background =
 
   init: ->
-    this.$el = $ 'body' .children 'div.background'
+    this.$el = $('body').children 'div.background'
     this.$el
       .css
         opacity: '0'

@@ -1,3 +1,8 @@
+
+webpack = require 'webpack'
+WebpackDevServer = require 'webpack-dev-server'
+config = require './webpack.config.js'
+
 express = require 'express'
 path = require 'path'
 favicon = require 'serve-favicon'
@@ -54,5 +59,10 @@ app.use (err, req, res, next) ->
   res.render 'error',
     message: err.message
     error: {}
+
+#new WebpackDevServer webpack(config),
+  #hot: true
+  #proxy:
+    #"*": "http://localhost:5000"
 
 module.exports = app
