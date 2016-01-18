@@ -2,7 +2,7 @@ $font-dark: #3A3A3A;
 
 body {
   background-color: black;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Abel', sans-serif;
   color: $font-dark;
   font-size: 16px;
   @media only screen and (max-device-width: 520px) and (orientation: portrait) {
@@ -19,7 +19,7 @@ body {
   
   @media only screen and (max-device-width: 520px) and (orientation: portrait) {
     background-image: none;
-    background-color: white;
+    background-color: gray;
   }
 }
 
@@ -54,7 +54,7 @@ body,
   }
 
   span.name {
-    font-size: 2.5em;
+    font-size: 3em;
     padding: 1em 0;
 
     &#first {
@@ -62,12 +62,13 @@ body,
     }
 
     &#last {
-      font-weight: bold;
+      /*font-weight: bold;*/
     }
 
   }
 
   p.description {
+    font-size: 1.3em;
   }
 
   div.developmentNotice {
