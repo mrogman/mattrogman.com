@@ -111,7 +111,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background-color: black;\n  font-family: 'Abel', sans-serif;\n  color: #3A3A3A;\n  font-size: 16px; }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    body {\n      font-size: 45px; } }\n\n.background {\n  position: absolute;\n  background-image: url(\"/images/bg-compressed.jpg\");\n  background-size: cover;\n  background-color: transparent;\n  z-index: -1; }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    .background {\n      background-image: none;\n      background-color: gray; } }\n\nhtml,\nbody,\n.main {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden; }\n\n.main {\n  display: flex;\n  justify-content: center; }\n\n.content {\n  align-self: center;\n  background-color: white;\n  text-align: center;\n  padding: 4em 3em 3em;\n  border-radius: 10px;\n  -webkit-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  -moz-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8); }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    .content {\n      width: 100vw;\n      height: 50vh; } }\n  .content span.name {\n    font-size: 3em;\n    padding: 1em 0; }\n    .content span.name#first {\n      color: #006086; }\n    .content span.name#last {\n      /*font-weight: bold;*/ }\n  .content p.description {\n    font-size: 1.3em; }\n  .content div.developmentNotice {\n    margin-top: 2em;\n    padding: 1em;\n    font-size: 1em;\n    background-color: #D1DDE4;\n    border-radius: 10px; }\n\np {\n  padding: 0;\n  margin: 1em 0;\n  font-size: 1em; }\n\na {\n  color: #00B7FF; }\n", ""]);
+	exports.push([module.id, "body {\n  background-color: black;\n  font-family: 'Abel', sans-serif;\n  color: #3A3A3A;\n  font-size: 16px; }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    body {\n      font-size: 45px; } }\n\n.background {\n  position: absolute;\n  background-image: url(\"/images/bg-compressed.jpg\");\n  background-size: cover;\n  background-color: transparent;\n  z-index: -1; }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    .background {\n      background-image: none;\n      background-color: gray; } }\n\nhtml,\nbody,\n.main {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden; }\n\n.main {\n  display: flex;\n  justify-content: center; }\n\n.content {\n  display: flex;\n  align-self: center;\n  background-color: white;\n  text-align: center;\n  padding: 4em 3em 3em;\n  border-radius: 10px;\n  -webkit-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  -moz-box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8);\n  box-shadow: 4px 4px 25px -6px rgba(0, 0, 0, 0.8); }\n  .content .content-inner {\n    align-self: center; }\n    .content .content-inner span.name {\n      font-size: 3em;\n      padding: 0;\n      margin: 1em 0 0; }\n      .content .content-inner span.name#first {\n        color: #006086; }\n      .content .content-inner span.name#last {\n        /*font-weight: bold;*/ }\n    .content .content-inner p.description {\n      font-size: 1.3em;\n      margin: 0.5em 0; }\n    .content .content-inner div.account-icons {\n      padding: 1em;\n      display: flex;\n      justify-content: space-between;\n      width: 80%;\n      margin: 0 auto; }\n      .content .content-inner div.account-icons i {\n        font-size: 3em;\n        color: #3A3A3A; }\n    .content .content-inner div.developmentNotice {\n      margin-top: 0.5em;\n      padding: 0.75em;\n      font-size: 1em;\n      background-color: #D1DDE4;\n      border-radius: 10px; }\n  @media only screen and (max-device-width: 520px) and (orientation: portrait) {\n    .content {\n      width: 100vw;\n      height: 50vh;\n      padding: 2em 1em; } }\n\np {\n  padding: 0;\n  margin: 1em 0;\n  font-size: 1em; }\n\na {\n  color: #00B7FF; }\n", ""]);
 	
 	// exports
 
@@ -452,7 +452,24 @@
 /***/ function(module, exports) {
 
 	$(function() {
+	  var $accountIcons;
 	  Background.init();
+	  $accountIcons = $('.account-icons').find('i');
+	  window.iconOrigColor = $accountIcons.css('color');
+	  $accountIcons.parent('a').on({
+	    mouseenter: function() {
+	      $(this).children().stop().animate({
+	        color: '#006086'
+	      });
+	      return 1000;
+	    },
+	    mouseleave: function() {
+	      $(this).children().animate({
+	        color: window.iconOrigColor
+	      });
+	      return 1000;
+	    }
+	  });
 	  return true;
 	});
 
