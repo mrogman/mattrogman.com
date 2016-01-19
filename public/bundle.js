@@ -452,10 +452,37 @@
 /***/ function(module, exports) {
 
 	$(function() {
-	  var $accountIcons;
+	  var $accountIcons, $contentBox, $contentInner;
 	  Background.init();
 	  $accountIcons = $('.account-icons').find('i');
+	  $contentBox = $('.content');
+	  $contentInner = $('.content-inner');
 	  window.iconOrigColor = $accountIcons.css('color');
+	  $contentBox.css({
+	    opacity: '0'
+	  });
+	  window.setTimeout(function() {
+	    window.contentBox = {
+	      width: $contentBox.width(),
+	      height: $contentBox.height()
+	    };
+	    $contentInner.hide();
+	    $contentBox.css({
+	      opacity: '1'
+	    });
+	    return $contentBox.css({
+	      opacity: '0',
+	      width: '10%',
+	      height: '10%'
+	    }).animate({
+	      opacity: '1',
+	      width: window.contentBox.width + 'px',
+	      height: window.contentBox.height + 'px'
+	    }, 600, 'easeOutBack', function() {
+	      $contentInner.fadeIn('fast');
+	      return $(this).removeAttr('style');
+	    });
+	  }, 400);
 	  $accountIcons.parent('a').on({
 	    mouseenter: function() {
 	      $(this).children().stop().animate({
