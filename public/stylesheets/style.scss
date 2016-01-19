@@ -52,6 +52,18 @@ body,
   .content-inner {
     align-self: center;
 
+    .avatar {
+      $size: 4em;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      background-image: url('/images/me-square.jpg');
+      background-position: center;
+      background-size: cover;
+      border-radius: $size/2;
+      margin: 0.5em 1em -0.5em -1em;
+    }
+
     span.name {
       font-size: 3em;
       padding: 0;
