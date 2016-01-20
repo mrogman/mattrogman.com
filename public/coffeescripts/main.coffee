@@ -28,8 +28,9 @@ $ ->
         width: window.contentBox.width + 'px'
         height: window.contentBox.height + 'px'
       600, 'easeOutBack', ->
-        $contentInner.fadeIn 'fast'
         $(this).removeAttr('style')
+        $contentInner.fadeIn 'fast', ->
+          setTimeout iconHighlight, 1000
     )
   , 400
 

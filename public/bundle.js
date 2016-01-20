@@ -479,8 +479,10 @@
 	      width: window.contentBox.width + 'px',
 	      height: window.contentBox.height + 'px'
 	    }, 600, 'easeOutBack', function() {
-	      $contentInner.fadeIn('fast');
-	      return $(this).removeAttr('style');
+	      $(this).removeAttr('style');
+	      return $contentInner.fadeIn('fast', function() {
+	        return setTimeout(iconHighlight, 1000);
+	      });
 	    });
 	  }, 400);
 	  iconHighlight = function() {
