@@ -7,8 +7,6 @@ $ ->
 
   window.iconOrigColor = $accountIcons.css 'color'
 
-  $contentBox.css opacity: '0'
-
   #content box animation
   window.setTimeout ->
     window.contentBox =
@@ -16,7 +14,7 @@ $ ->
       height: $contentBox.height()
 
     $contentInner.hide()
-    $contentBox.css opacity: '1'
+    $contentBox.addClass 'visible'
 
     $contentBox
       .css(
@@ -30,7 +28,7 @@ $ ->
       600, 'easeOutBack', ->
         $(this).removeAttr('style')
         $contentInner.fadeIn 'fast', ->
-          setTimeout iconHighlight, 1000
+          setTimeout iconHighlight, 500
     )
   , 400
 

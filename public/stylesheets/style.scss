@@ -45,10 +45,15 @@ body,
   text-align: center;
   padding: 3em;
   border-radius: 10px;
+  opacity: 0;
 
   -webkit-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
   -moz-box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
   box-shadow: 4px 4px 25px -6px rgba(0,0,0,0.8);
+
+  &.visible {
+    opacity: 1;
+  }
 
   .content-inner {
     align-self: center;
